@@ -1,0 +1,57 @@
+{
+  "name": "serverless-plugin-integration-request",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "description": "Serverless plugin to mapping custom integration request on aws api gateway",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:node": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "build": "npm run build:node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contamobi/serverless-plugin-integration-request.git"
+  },
+  "keywords": [
+    "serverless",
+    "serverless applications",
+    "aws",
+    "aws lambda",
+    "http-proxy",
+    "request integration",
+    "serverless.com"
+  ],
+  "author": "daniel.oliveira@conta.mobi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/contamobi/serverless-plugin-integration-request/issues"
+  },
+  "homepage": "https://github.com/contamobi/serverless-plugin-integration-request#readme",
+  "dependencies": {
+    "lodash": "4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-core": "6.21.0",
+    "babel-eslint": "7.1.1",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-preset-node6": "11.0.0",
+    "babel-preset-stage-1": "6.16.0",
+    "babel-register": "6.26.0",
+    "cross-env": "3.1.4",
+    "eslint": "3.13.1",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-standard": "2.0.1"
+  },
+  "peerDependencies": {
+    "serverless": ">= 1.26.0"
+  }
+}
