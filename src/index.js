@@ -51,8 +51,8 @@ class ServerlessIntegrationRequest {
     if (type === 'AWS' || type === 'HTTP' || type === 'MOCK') {
       _.assign(integration, {
         PassthroughBehavior: http.request && http.request.passThrough,
-        RequestTemplates: this.getIntegrationRequestTemplates(http, type === 'AWS'),
-        IntegrationResponses: this.getIntegrationResponses(http),
+        RequestTemplates: this.serverless.getIntegrationRequestTemplates(http, type === 'AWS'),
+        IntegrationResponses: this.serverless.getIntegrationResponses(http),
       });
     }
 
