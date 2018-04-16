@@ -5,8 +5,8 @@ class ServerlessIntegrationRequest {
     this.serverless = serverless;
     _.each(serverless.pluginManager.plugins, (value, key) => {
       if (value.constructor.name === "AwsCompileApigEvents") {
-        this.getIntegrationRequestTemplates = value.getIntegrationRequestTemplates
-        this.getIntegrationResponses = value.getIntegrationResponses
+        this.getIntegrationRequestTemplates = value.getIntegrationRequestTemplates;
+        this.getIntegrationResponses = value.getIntegrationResponses;
         value.getMethodIntegration = this.getMethodIntegration;
         value.getIntegrationRequestParameters = this.getIntegrationRequestParameters;
         value.validate = this.validate;
