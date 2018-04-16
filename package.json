@@ -1,5 +1,5 @@
 {
-  "name": "@cmobi/serverless-plugin-integration-request",
+  "name": "serverless-plugin-integration-request",
   "version": "1.0.7",
   "engines": {
     "node": ">=6.0"
