@@ -20,7 +20,6 @@ class ServerlessIntegrationRequest {
       IntegrationHttpMethod: 'POST',
       Type: type,
     };
-
     // Valid integrations are:
     // * `HTTP` for integrating with an HTTP back end,
     // * `AWS` for any AWS service endpoints,
