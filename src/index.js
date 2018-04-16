@@ -5,6 +5,8 @@ class ServerlessIntegrationRequest {
     this.serverless = serverless;
     _.each(serverless.pluginManager.plugins, (value, key) => {
       if (value.constructor.name === "AwsCompileApigEvents") {
+        this.getIntegrationRequestTemplates = value.getIntegrationRequestTemplates
+        this.getIntegrationResponses = value.getIntegrationResponses
         value.getMethodIntegration = this.getMethodIntegration;
         value.getIntegrationRequestParameters = this.getIntegrationRequestParameters;
         value.validate = this.validate;
@@ -51,8 +53,8 @@ class ServerlessIntegrationRequest {
     if (type === 'AWS' || type === 'HTTP' || type === 'MOCK') {
       _.assign(integration, {
         PassthroughBehavior: http.request && http.request.passThrough,
-        RequestTemplates: this.serverless.getIntegrationRequestTemplates(http, type === 'AWS'),
-        IntegrationResponses: this.serverless.getIntegrationResponses(http),
+        RequestTemplates: this.getIntegrationRequestTemplates(http, type === 'AWS'),
+        IntegrationResponses: this.getIntegrationResponses(http),
       });
     }
 
